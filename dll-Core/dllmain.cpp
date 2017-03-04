@@ -26,7 +26,7 @@ void Hack_Ads_Tick()
 			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
 			SendMessage(hwnd,WM_CLOSE,0,0);
-			//ตอนที่ Login เข้ามาจะเจอเลย
+			//Login form
 			hwnd = FindWindow("TTCGNetMainFrm",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"TsPanel",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"TsPageControl",NULL);
@@ -35,12 +35,12 @@ void Hack_Ads_Tick()
 			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
 			SendMessage(hwnd,WM_CLOSE,0,0);
-			//หน้า เลือก channel บนสุด
+			//Top form of Channel Form
 			hwnd = FindWindow("TTCGNetChannelFrm",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
 			SendMessage(hwnd,WM_CLOSE,0,0);
-			//หน้าแชท TCG
+			//Chat TCG form
 			hwnd = FindWindow("TTCGNetMainFrm",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"TsPanel",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"TsPageControl",NULL);
@@ -52,7 +52,7 @@ void Hack_Ads_Tick()
 			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
 			SendMessage(hwnd,WM_CLOSE,0,0);
-			// frm Start game บนหัว
+			// top of start game form
 			hwnd = FindWindow("TCGNetFrmStartGame",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
