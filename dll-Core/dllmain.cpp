@@ -15,18 +15,18 @@ void Hack_Ads_Tick()
 {
 	while(true){
 			HWND hwnd = NULL;
-			//main from login
+			// main from login
 			hwnd = FindWindow("TTCGNetLoginFrm",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
 			SendMessage(hwnd,WM_CLOSE,0,0);
-			//Top Form
+			// Top Form
 			hwnd = FindWindow("TTCGNetMainFrm",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"TsPanel","BannerPnl");
 			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
 			SendMessage(hwnd,WM_CLOSE,0,0);
-			//Login form
+			// Login form
 			hwnd = FindWindow("TTCGNetMainFrm",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"TsPanel",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"TsPageControl",NULL);
@@ -35,12 +35,12 @@ void Hack_Ads_Tick()
 			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
 			SendMessage(hwnd,WM_CLOSE,0,0);
-			//Top form of Channel Form
+			// Top form of Channel Form
 			hwnd = FindWindow("TTCGNetChannelFrm",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
 			SendMessage(hwnd,WM_CLOSE,0,0);
-			//Chat TCG form
+			// Chat TCG form
 			hwnd = FindWindow("TTCGNetMainFrm",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"TsPanel",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"TsPageControl",NULL);
