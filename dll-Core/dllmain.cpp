@@ -9,12 +9,12 @@ DWORD GetPIDForProcess (char* process);
 void EnableDebugPriv();
 DWORD GetDLLBase(char* DllName, DWORD tPid);
 
-
-
 void Hack_Ads_Tick()
 {
-	while(true){
+	while(true)
+	{
 			HWND hwnd = NULL;
+
 			// main from login
 			hwnd = FindWindow("TTCGNetLoginFrm",NULL);
 			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
@@ -66,13 +66,14 @@ void Hack_Ads_Tick()
 			Sleep(1000);
 	}
 }
+
 void Memory_Hack()
 {
 	DWORD PID = 0;
-	if(GetPIDForProcess("Cybergames.exe") != NULL)
-    PID = GetPIDForProcess("Cybergames.exe");
+	if (GetPIDForProcess("Cybergames.exe") != NULL)
+    	PID = GetPIDForProcess("Cybergames.exe");
 	HANDLE hProc = OpenProcess(PROCESS_ALL_ACCESS, false, PID);
-	if(hProc)
+	if (hProc)
 		{
 			 //GetWindowThreadProcessId
 			 //GetCurrentProcess()
