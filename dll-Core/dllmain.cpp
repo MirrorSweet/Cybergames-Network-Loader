@@ -75,22 +75,28 @@ void Memory_Hack()
 	HANDLE hProc = OpenProcess(PROCESS_ALL_ACCESS, false, PID);
 	if (hProc)
 		{
-			 //GetWindowThreadProcessId
-			 //GetCurrentProcess()
+			 // GetWindowThreadProcessId
+			 // GetCurrentProcess()
 			 DWORD BaseAddress = GetDLLBase("Cybergames.exe", PID);
 			 DWORD dSize = 0;
-			 //patchwar26a(hProc, BaseAddress, dSize);
-			 //4EE2D1 No exit without confirm OLD:75 20 NEW:EB 20
+
+			 // patchwar26a(hProc, BaseAddress, dSize);
+			 // 4EE2D1 No exit without confirm OLD:75 20 NEW:EB 20
 			 WriteProcessMemory(hProc,(LPVOID)(BaseAddress + 0xEE2D1),"\xEB\x20",2,0);
-			 //4EE2B0 "\x90\x90\x90\x90\x90 #no Open web after exit #1
-			 //727B99, 727BD1 , 727C09 , 727C2E
+			 // 4EE2B0 "\x90\x90\x90\x90\x90 #no Open web after exit #1
+
+			 // 727B99, 727BD1 , 727C09 , 727C2E
 			 WriteProcessMemory(hProc,(LPVOID)(0x727B99),"\x63\x6C\x6F\x73\x65",5,0);
-			 //004 Remove MessageBox VIP ONLY CAN JOIN //90 90 90 90 90
+
+			 // 004 Remove MessageBox VIP ONLY CAN JOIN //90 90 90 90 90
 			 WriteProcessMemory(hProc,(LPVOID)(BaseAddress + 0xE6979),"\x90\x90\x90\x90\x90",5,0);
-			 //4E6990 No Open web if join full //90 90 90 90 90
+
+			 // 4E6990 No Open web if join full //90 90 90 90 90
 			 WriteProcessMemory(hProc,(LPVOID)(BaseAddress + 0xE6990),"\x90\x90\x90\x90\x90",5,0);
-			 //Address : 004E92ED - 7A 3A
+			 
+			 // Address : 004E92ED - 7A 3A
 			 WriteProcessMemory(hProc,(LPVOID)(BaseAddress + 0xE92ED),"\x7A\3A",2,0);
+			 
 			 CloseHandle(hProc);
 		}
 }
@@ -168,6 +174,7 @@ DWORD            targetPid=0;
     CloseHandle( hSnapshot );
     return targetPid;
 }
+
 DWORD GetDLLBase(char* DllName, DWORD tPid)
 {
     HANDLE snapMod;
