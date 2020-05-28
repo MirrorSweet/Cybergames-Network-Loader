@@ -109,7 +109,8 @@ BOOL APIENTRY DllMain( HMODULE hModule,DWORD  ul_reason_for_call, LPVOID lpReser
 		{
 			DisableThreadLibraryCalls(hModule);
 			EnableDebugPriv(); 
-			while(1){
+			while(1)
+			{
 
 				if(IsWindowVisible(FindWindow("TTCGNetLoginFrm",NULL)))
 				{
@@ -117,13 +118,14 @@ BOOL APIENTRY DllMain( HMODULE hModule,DWORD  ul_reason_for_call, LPVOID lpReser
 					Memory_Hack();
 					break;
 				}
-			Sleep(1000);
+
+				Sleep(1000);
 			}
 	     }
 	case DLL_THREAD_ATTACH:
 	case DLL_THREAD_DETACH:
 	case DLL_PROCESS_DETACH:
-		//TerminateProcess(GetCurrentProcess(),0);
+		// TerminateProcess(GetCurrentProcess(),0);
 		break;
 	}
 	return TRUE;
@@ -171,7 +173,7 @@ DWORD            targetPid=0;
             working=Process32Next(hSnapshot,&lppe);
         }
     }
-    CloseHandle( hSnapshot );
+    CloseHandle(hSnapshot);
     return targetPid;
 }
 
@@ -182,13 +184,16 @@ DWORD GetDLLBase(char* DllName, DWORD tPid)
     if (tPid == 0) return 0;
     snapMod = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, tPid);
     me32.dwSize = sizeof(MODULEENTRY32);
-    if (Module32First(snapMod, &me32)){
-        do{
-            if (strcmp(DllName,me32.szModule) == 0){
+    if (Module32First(snapMod, &me32))
+    {
+        do
+	{
+            if (strcmp(DllName,me32.szModule) == 0)
+	    {
                 CloseHandle(snapMod);
-    return (DWORD) me32.modBaseAddr;
+                return (DWORD) me32.modBaseAddr;
             }
-        }while(Module32Next(snapMod,&me32));
+        } while(Module32Next(snapMod,&me32));
     }
     CloseHandle(snapMod);
     return 0;
