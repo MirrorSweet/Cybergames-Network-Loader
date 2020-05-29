@@ -72,6 +72,7 @@ void Memory_Hack()
 	DWORD PID = 0;
 	if (GetPIDForProcess("Cybergames.exe") != NULL)
     	PID = GetPIDForProcess("Cybergames.exe");
+
 	HANDLE hProc = OpenProcess(PROCESS_ALL_ACCESS, false, PID);
 	if (hProc)
 		{
@@ -155,22 +156,22 @@ void EnableDebugPriv()
 
 DWORD GetPIDForProcess(char* process)
 {
-    BOOL            working=0;
-    PROCESSENTRY32 lppe= {0};
-DWORD            targetPid=0;
-    HANDLE hSnapshot=CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS ,0);
+    BOOL            working = 0;
+    PROCESSENTRY32 	lppe = {0};
+	DWORD			targetPid = 0;
+    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
     if (hSnapshot)
     {
         lppe.dwSize=sizeof(lppe);
         working=Process32First(hSnapshot,&lppe);
         while (working)
         {
-   if(strcmp(lppe.szExeFile,process)==0)
-            {
-                targetPid=lppe.th32ProcessID;
+   			if (strcmp(lppe.szExeFile,process) == 0)
+   			{
+				targetPid=lppe.th32ProcessID;
                 break;
             }
-            working=Process32Next(hSnapshot,&lppe);
+            working = Process32Next(hSnapshot, &lppe);
         }
     }
     CloseHandle(hSnapshot);
@@ -187,13 +188,13 @@ DWORD GetDLLBase(char* DllName, DWORD tPid)
     if (Module32First(snapMod, &me32))
     {
         do
-	{
+		{
             if (strcmp(DllName,me32.szModule) == 0)
-	    {
+	    	{
                 CloseHandle(snapMod);
                 return (DWORD) me32.modBaseAddr;
             }
-        } while(Module32Next(snapMod,&me32));
+        } while (Module32Next(snapMod, &me32));
     }
     CloseHandle(snapMod);
     return 0;
