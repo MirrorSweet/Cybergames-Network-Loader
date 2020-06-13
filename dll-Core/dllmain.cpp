@@ -83,7 +83,7 @@ void Memory_Hack()
 
 			 // patchwar26a(hProc, BaseAddress, dSize);
 			 // 4EE2D1 No exit without confirm OLD:75 20 NEW:EB 20
-			 WriteProcessMemory(hProc,(LPVOID)(BaseAddress + 0xEE2D1),"\xEB\x20",2,0);
+			 WriteProcessMemory(hProc, (LPVOID)(BaseAddress + 0xEE2D1), "\xEB\x20", 2, 0);
 			 // 4EE2B0 "\x90\x90\x90\x90\x90 #no Open web after exit #1
 
 			 // 727B99, 727BD1 , 727C09 , 727C2E
@@ -126,7 +126,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,DWORD  ul_reason_for_call, LPVOID lpReser
 	case DLL_THREAD_ATTACH:
 	case DLL_THREAD_DETACH:
 	case DLL_PROCESS_DETACH:
-		// TerminateProcess(GetCurrentProcess(),0);
+		// TerminateProcess(GetCurrentProcess(), 0);
 		break;
 	}
 	return TRUE;
