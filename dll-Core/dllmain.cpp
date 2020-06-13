@@ -16,52 +16,52 @@ void Hack_Ads_Tick()
 			HWND hwnd = NULL;
 
 			// main from login
-			hwnd = FindWindow("TTCGNetLoginFrm",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
-			SendMessage(hwnd,WM_CLOSE,0,0);
+			hwnd = FindWindow("TTCGNetLoginFrm", NULL);
+			hwnd = FindWindowEx(hwnd, NULL,"Shell Embedding", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "Shell DocObject View", NULL);
+			SendMessage(hwnd, WM_CLOSE, 0, 0);
 
 			// Top Form
-			hwnd = FindWindow("TTCGNetMainFrm",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"TsPanel","BannerPnl");
-			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
-			SendMessage(hwnd,WM_CLOSE,0,0);
+			hwnd = FindWindow("TTCGNetMainFrm", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "TsPanel", "BannerPnl");
+			hwnd = FindWindowEx(hwnd, NULL, "Shell Embedding", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "Shell DocObject View", NULL);
+			SendMessage(hwnd, WM_CLOSE, 0 ,0);
 
 			// Login form
-			hwnd = FindWindow("TTCGNetMainFrm",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"TsPanel",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"TsPageControl",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"TsTabSheet","Main");
-			hwnd = FindWindowEx(hwnd,NULL,"TsPanel","sPanel3");
-			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
-			SendMessage(hwnd,WM_CLOSE,0,0);
+			hwnd = FindWindow("TTCGNetMainFrm", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "TsPanel", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "TsPageControl", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "TsTabSheet", "Main");
+			hwnd = FindWindowEx(hwnd, NULL, "TsPanel", "sPanel3");
+			hwnd = FindWindowEx(hwnd, NULL, "Shell Embedding", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "Shell DocObject View", NULL);
+			SendMessage(hwnd, WM_CLOSE, 0, 0);
 
 			// Top form of Channel Form
-			hwnd = FindWindow("TTCGNetChannelFrm",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
-			SendMessage(hwnd,WM_CLOSE,0,0);
+			hwnd = FindWindow("TTCGNetChannelFrm", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "Shell Embedding", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "Shell DocObject View", NULL);
+			SendMessage(hwnd, WM_CLOSE, 0, 0);
 
 			// Chat TCG form
-			hwnd = FindWindow("TTCGNetMainFrm",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"TsPanel",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"TsPageControl",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"TsTabSheet","Lobby");
-			hwnd = FindWindowEx(hwnd,NULL,"TsPanel",NULL);
-			hwnd = GetWindow(hwnd,GW_HWNDNEXT);
-			hwnd = FindWindowEx(hwnd,NULL,"TPanel",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"TsPanel","sPanel2");
-			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
-			SendMessage(hwnd,WM_CLOSE,0,0);
+			hwnd = FindWindow("TTCGNetMainFrm", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "TsPanel", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "TsPageControl", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "TsTabSheet", "Lobby");
+			hwnd = FindWindowEx(hwnd, NULL, "TsPanel", NULL);
+			hwnd = GetWindow(hwnd, GW_HWNDNEXT);
+			hwnd = FindWindowEx(hwnd, NULL, "TPanel", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "TsPanel", "sPanel2");
+			hwnd = FindWindowEx(hwnd, NULL, "Shell Embedding", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "Shell DocObject View", NULL);
+			SendMessage(hwnd, WM_CLOSE, 0, 0);
 
 			// top of start game form
-			hwnd = FindWindow("TCGNetFrmStartGame",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"Shell Embedding",NULL);
-			hwnd = FindWindowEx(hwnd,NULL,"Shell DocObject View",NULL);
-			SendMessage(hwnd,WM_CLOSE,0,0);
+			hwnd = FindWindow("TCGNetFrmStartGame", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "Shell Embedding", NULL);
+			hwnd = FindWindowEx(hwnd, NULL, "Shell DocObject View", NULL);
+			SendMessage(hwnd, WM_CLOSE, 0, 0);
 
 			Sleep(1000);
 	}
